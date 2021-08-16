@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiện thị đầu ra</title>
+</head>
+<body>
+    <button type="button" id="butt1">Click me 1!</button>
+    <div id="messageDiv"></div>
+    <button type="button" id="butt2">Click me 2!</button><br>
+    <button type="button" id="butt3">Click me 3!</button><br>
+    <button id="butt4" type="button">Click me 4!</button>
+</body>
+</html>
+
+<script>
+    let butt1 = document.getElementById("butt1");
+    butt1.addEventListener("click",click1);
+    function click1(){
+        alert('Xin chao!');
+    }
+
+    let butt2 = document.getElementById("butt2");
+    butt2.addEventListener("click", click2);
+    function click2(){
+        document.getElementById('messageDiv').innerHTML = 'Xin chao 2';
+    }
+
+    let butt3 = document.getElementById("butt3");
+    butt3.addEventListener("click", click3)
+    function click3(){
+        document.write('Xin chao 2 lan 2!');
+    }
+
+    let butt4 = document.getElementById("butt4");
+    butt4.addEventListener("click", click4);
+    function click4(){
+        console.log('Xin chao 4!');
+    }
+</script>
