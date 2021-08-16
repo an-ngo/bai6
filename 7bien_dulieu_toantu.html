@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="dtb"  onclick="dtb()">Điểm trung bình</button>
+    <br>
+    <button id="changetem" onclick="changetem()">Change temperature</button>
+    <br>
+    <button id="area_circle" onclick="area()">Area circle</button>
+    <br>
+    <button id="perimeter" onclick="perimeter()">Perimeter</button>
+</body>
+</html>
+<script>
+    function dtb() {
+        var ly=  parseInt(prompt("nhap diem Vat Ly"));
+        var hoa = parseInt(prompt("Nhap diem Hoa hoc"));
+        var sinh = parseInt(prompt("nhap diem Sinh Hoc"));
+        var dtb = (ly+hoa+sinh)/3
+        document.write('Diem trung binh la: '+dtb+'<br/>')
+        document.write('Diem tong la: '+dtb*3)
+    }
+    
+    function changetem(){
+        let temp=parseInt(prompt("nhap nhiet do C",'37'));
+        let extemp=temp*9/5+32;
+        document.write("do F la: "+extemp)
+    }
+
+    function area(){
+        let height = parseInt(prompt("nhap ban kinh hinh tron"));
+        document.write('Dien tich hinh tron la: '+ height*height*3.14)       
+    }
+
+    function perimeter(){
+        let height = parseInt(prompt('Nhap ban kinh hinh tron'));
+        document.write('Chu vi hinh tron la: '+height*3.14)
+    }
+</script>
