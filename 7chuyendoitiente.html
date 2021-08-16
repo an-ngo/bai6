@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="7chuyendoitiente.html" method="GET" name="chuyendoitiente">
+       <table style="width: 100%;">
+       <tr>
+           <td>Amount</td>
+           <td>From Currency</td>
+           <td>To Currency</td>
+           <td></td>
+       </tr>
+       <tr>
+           <td>
+               <input type="number" name="amount" id="amount" value="24000">
+           </td>
+           <td>
+               <select name="fromCurrency" id="fromCurrency" style="width: 150px;">
+                   <option value="VND">VND</option>
+                   <option value="USD">USD</option>
+                   <option value="yen">Yen</option>
+               </select>
+           </td>
+           <td style="width: 150px;">
+               <select name="toCurrency" id="toCurrency" style="width: 150px;">
+                    <option value="USD">USD</option>
+                    <option value="VND">VND</option>
+                    <option value="yen">Yen</option>
+               </select>
+           </td>
+           <td>
+               <button type="button" id="button1">Convert</button>
+           </td>
+       </tr>
+   </table>
+   </form> 
+</body>
+</html>
+
+<script>
+    let whenclick = document.getElementById("button1");
+    let fromC = document.getElementById('fromCurrency');
+    let toC = document.getElementById('toCurrency');
+    let inputA = document.getElementById('amount');
+    
+    whenclick.addEventListener('click',convert);
+    function convert(){
+        let answer = parseInt(inputA.value);
+        console.log(answer);
+        if (fromC.value == toC.value){
+            alert('Ket qua: ' +inputA.value+' '+toC.value);
+        }
+        else{
+            if(fromC.value=='VND'){
+                answer=answer/24000;
+            }
+            else if(fromC.value == 'yen'){
+                answer=answer/110;
+            }
+            
+            if(toC.value=='VND'){
+                answer*=24000;
+            }
+            else if (toC.value=='yen'){
+                answer*=110;
+            }
+            alert('ket qua: '+answer+' '+toC.value)
+        }
+    }
+</script>
+
