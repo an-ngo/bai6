@@ -27,28 +27,17 @@
         let inputNum = document.getElementById('num').value
         let num = parseInt(inputNum)
         console.log(num)
+        let namnhuan = false;
         //document.getElementById('para1').innerHTML = 'Day la nam KHONG nhuan'
-        switch(num%100){
-        case 0:
-            document.getElementById('para1').innerHTML = 'Day la nam KHONG nhuan'
-        break;
-
-        default:
-            {
-                console.log(num%4)
-                switch(num%4){
-                    case 0:
-                        document.getElementById('para1').innerText ='Day la nam NHUAN'
-                        break;
-
-                    default:
-                        document.getElementById('para1').innerText = 'Day la nam KHONG nhuan'
+        if (num%4==0){
+            if(num%100==0){
+                if(num%400==0){
+                    namnhuan=true;
                 }
-
             }
-                
-        
-            
+            else namnhuan = true;
         }
+        if(namnhuan) document.getElementById('para1').innerText = 'Day la nam NHUAN'
+        else document.getElementById('para1').innerText = 'Day la nam KHONG nhuan'
     }
 </script>
