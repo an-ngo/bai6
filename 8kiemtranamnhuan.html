@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiem tra nam nhuan</title>
+</head>
+<body>
+    <form action="8kiemtranamnhuan.html">
+        <label for="num">input year</label> <br>
+        <input type="number" name="num" id="num" > 
+        <button id="butt1" type="button">Submit</button>
+        <br>
+        <p id="para1"></p>
+    </form>
+</body>
+</html>
+
+<script>
+    
+    
+    let submit = document.getElementById('butt1')    
+    submit.addEventListener('click',checking)
+
+    function checking(){
+        let inputNum = document.getElementById('num').value
+        let num = parseInt(inputNum)
+        console.log(num)
+        //document.getElementById('para1').innerHTML = 'Day la nam KHONG nhuan'
+        switch(num%100){
+        case 0:
+            document.getElementById('para1').innerHTML = 'Day la nam KHONG nhuan'
+        break;
+
+        default:
+            {
+                console.log(num%4)
+                switch(num%4){
+                    case 0:
+                        document.getElementById('para1').innerText ='Day la nam NHUAN'
+                        break;
+
+                    default:
+                        document.getElementById('para1').innerText = 'Day la nam KHONG nhuan'
+                }
+
+            }
+                
+        
+            
+        }
+    }
+</script>
