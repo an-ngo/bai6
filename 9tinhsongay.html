@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh so ngay</title>
+</head>
+<body>
+    <input type="number" name="month" id="month">
+    <button id="but">Tinh so ngay</button>
+    <br><br>
+    <p id="para"></p>
+</body>
+</html>
+
+<script>
+    let but = document.getElementById('but')
+    but.addEventListener('click',output);
+    function output(){
+         let month = parseInt(document.getElementById('month').value);
+         let out = '';
+         switch(month){
+            case 1:
+                 out = '31';
+                 break
+            case 2: 
+                out = '28 hoac 29';
+                break;
+            case 3:
+                out = '31';
+                break;
+            case 4:
+                out = '30';
+                break;
+            case 5:
+                out = '31';
+                break;
+            case 6:
+                out = '30';
+                break;
+            case 7:
+                out = '31';
+                break;
+            case 8:
+                out = '31';
+                break;
+            case 9:
+                out = '30';
+                break;
+            case 10:
+                out = '31';
+                break;
+            case 11:
+                out = '30';
+                break;
+            case 12:
+                out = '31';
+                break;
+        }
+        document.getElementById('para').innerHTML = 'Thang '+month+' co '+out+' ngay'
+
+    }
+</script>
