@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi so can nang</title>
+</head>
+<body>
+    <p>hay nhap nhieu cao va can nang cua ban</p>
+    <label for="hei">Chieu cao</label>
+    <input type="number" name="hei" id="hei"><br><br>
+    <label for="wei">Can nang</label>
+    <input type="number" name="wei" id="wei"><br><br>
+    <button type="button" id="but">submit</button>
+</body>
+</html>
+
+<script>
+    let but = document.getElementById('but');
+    but.addEventListener('click',output);
+
+    function output(){
+        let hei = parseInt(document.getElementById('hei').value);
+        let wei = parseInt(document.getElementById('wei').value);
+        let bmi = wei/hei/hei;
+        let ans =''
+        if (bmi<18.5) ans = 'Underweight'
+        else if(18.5<=bmi&&bmi<25) ans = 'Normal'
+        else if(25<=bmi&& bmi<30) ans = 'Overweight'
+        else ans = 'Obese'
+        alert('you are ' + ans);
+    }
+</script>
