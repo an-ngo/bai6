@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cau truc dieu kien 1</title>
+</head>
+<body>
+    <input type="number" name="number1" id="number1">
+    <input type="number" name="number2" id="number2">
+    <button type="button" onclick="chia_het()">chia het?</button><br><br><br>
+
+    <input type="number" name="age" id="age">
+    <button type="button" onclick="kiem_tra_tuoi()">Kiem tra tuoi</button><br><br><br>
+
+    <input type="number" name="integer" id="integer">
+    <button type="button" onclick="kiem_tra_soduong()">kiem tra so duong</button><br><br><br>
+    
+    <input type="number" name="num" id="num1">
+    <input type="number" name="num" id="num2">
+    <input type="number" name="num" id="num3">
+    <button type="button" onclick="maxValue()">Gia tri lon nhat</button><br><br><br>
+
+    
+    
+</body>
+</html>
+<script>
+    function chia_het(){
+        let a = document.getElementById('number1').value
+        let b = document.getElementById('number2').value
+        if(a%b){
+            alert('a khong chia het cho b')
+        }
+        else alert('a chia het cho b')
+    }
+
+    function kiem_tra_tuoi(){
+        let age = document.getElementById('age').value;
+        if(age>15) alert('Du dieu kien');
+        else alert('khong du dieu kien')
+    }
+
+    function kiem_tra_soduong(){
+        let integer = document.getElementById('integer').value;
+        if(integer>0) alert(' day la so duong')
+        else if(integer<0) alert('day la so am')
+        else alert('day la so 0')
+    }
+
+    function maxValue(){
+        let num1=document.getElementById('num1').value;
+        let num2=document.getElementById('num2').value;
+        let num3=document.getElementById('num3').value;
+        let max = num1;
+        if(max<num2)    max=num2;
+        if(max<num3)    max=num3;
+        alert('gia tri lon nhat la '+max)
+    }
+    
+</script>
