@@ -1,0 +1,23 @@
+img{
+    width: 800;
+    height: 160;
+    position:relative;
+}
+#1{
+    top: 0px;
+    left: 0px;
+}
+#2{
+    top: 160px;
+    left: 0;
+}
+#3{
+    top: 320px;
+    left: 0px;
+}
+#4{
+    top: 480px;
+}
+#5{
+    top: 600px;
+}
