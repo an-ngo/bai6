@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you love me</title>
+</head>
+<body>
+    <h1>Do u love me</h1>
+    <button onclick="func1()">YES</button>
+    <button id="buttonNo" onmouseover="func2()" style="position: absolute; " >NO</button>
+</body>
+</html>
+<script>
+    function func1(){
+        alert('<3');
+    }
+    function func2(){
+        console.log(Math.random())
+        let x = Math.round(Math.random()*window.innerWidth)
+        let y = Math.round(Math.random()*window.innerHeight)
+        document.getElementById('buttonNo').style.left = x+'px';
+        document.getElementById('buttonNo').style.top= y+'px';
+    }
+</script>
