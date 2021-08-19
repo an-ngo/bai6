@@ -14,28 +14,28 @@
                 <td colspan="4" ><input type="" style="text-align: right;" id="answer" value="0"></td>
             </tr>
             <tr>
-                <th><button type="button" name="num" id="1" onclick="calculator(this)">1</button></th>
-                <th><button type="button" name="num" id="2" onclick="calculator(this)">2</button></th>
-                <th><button type="button" name="num" id="3" onclick="calculator(this)">3</button></th>
-                <th><button type="button" name="num" id="+" onclick="calculator(this)">+</button></th>
+                <th><button type="button" name="num" id="1" onclick="getNumber(this)">1</button></th>
+                <th><button type="button" name="num" id="2" onclick="getNumber(this)">2</button></th>
+                <th><button type="button" name="num" id="3" onclick="getNumber(this)">3</button></th>
+                <th><button type="button" name="num" id="+" onclick="get_opera(this)">+</button></th>
             </tr>
             <tr>
-                <th><button type="button" name="num" id="4" onclick="calculator(this)">4</button></th>
-                <th><button type="button" name="num" id="5" onclick="calculator(this)">5</button></th>
-                <th><button type="button" name="num" id="6" onclick="calculator(this)">6</button></th>
-                <th><button type="button" name="num" id="-" onclick="calculator(this)">-</button></th>
+                <th><button type="button" name="num" id="4" onclick="getNumber(this)">4</button></th>
+                <th><button type="button" name="num" id="5" onclick="getNumber(this)">5</button></th>
+                <th><button type="button" name="num" id="6" onclick="getNumber(this)">6</button></th>
+                <th><button type="button" name="num" id="-" onclick="get_opera(this)">-</button></th>
             </tr>
             <tr>
-                <th><button type="button" name="num" id="7" onclick="calculator(this)">7</button></th>
-                <th><button type="button" name="num" id="8" onclick="calculator(this)">8</button></th>
-                <th><button type="button" name="num" id="9" onclick="calculator(this)">9</button></th>
-                <th><button type="button" name="num" id="x" onclick="calculator(this)">x</button></th>
+                <th><button type="button" name="num" id="7" onclick="getNumber(this)">7</button></th>
+                <th><button type="button" name="num" id="8" onclick="getNumber(this)">8</button></th>
+                <th><button type="button" name="num" id="9" onclick="getNumber(this)">9</button></th>
+                <th><button type="button" name="num" id="x" onclick="get_opera(this)">x</button></th>
             </tr>
             <tr>
                 <th><button name="num" id="C" type="reset">C</button></th>
-                <th><button type="button" name="num" id="0" onclick="calculator(this)">0</button></th>
-                <th><button type="button" name="num" id="=" onclick ="display()">=</button></th>
-                <th><button type="button" name="num" id="/" onclick="calculator(this)">/</button></th>
+                <th><button type="button" name="num" id="0" onclick="getNumber(this)">0</button></th>
+                <th><button type="button" name="num" id="=" onclick ="calculator()">=</button></th>
+                <th><button type="button" name="num" id="/" onclick="get_opera(this)">/</button></th>
             </tr>
         </table>
 
@@ -46,19 +46,16 @@
 
 <script>
     let submit = document.getElementsByName('num');
-    let newva = 0;
-    let oldva = 0;
+    let newva = '';
+    let oldva = '';
     let opera = '';
     let answer = ''; 
     let count = 0;
+    let numberContinue = 0;
 
-
-    function calculator(e){
+    function get_opera(e){
         console.log('id input: '+e.getAttribute("id"))
         switch(e.getAttribute("id")){
-            // case '1':
-            //     calculator();
-            //     break;
             case '+':
                 opera = '+'
                 break;
@@ -71,48 +68,47 @@
             case '/':
                 opera = '/'
                 break;
-            default:
-                calculator1(e);
         }
+        count++
+        display();
         //console.log('opera: '+opera);
     }
 
-    function calculator1(e){
+    function getNumber(e){
         if(count==0){
-            oldva=parseInt(e.getAttribute("id"));
-            count++;
+            oldva=oldva+e.getAttribute("id");
+            display()
         }
         else {
+            newva=newva+e.getAttribute("id");
+            display();
 
-            newva=parseInt(e.getAttribute("id"));
-            console.log('n = '+newva);
-
-            switch(opera){
-                case '+':
-                    oldva+=newva;
-                    break;
-                case '-':
-                    oldva-=newva
-                    break
-                case '*':
-                    oldva=oldva*newva
-                    break
-                case '/':
-                    oldva/=newva
-                    break;
-            }
-            console.log('o = '+oldva);
-            //calculator2();
         }
-        //console.log('id 2rd: '+e.getAttribute("id"))
-        //display(e)
     }
 
+    function calculator(){
+        switch(opera){
+            case '+':
+                oldva=parseInt(oldva)+parseInt(newva)
+                break;
+            case '-':
+                oldva-=newva
+                break
+            case '*':
+                oldva=oldva*newva
+                break
+            case '/':
+                oldva/=newva
+                break;
+        }
+            document.getElementById('answer').value = oldva;
+            newva=''
+    }
 
     function display(){        //e here for check console
         // console.log('oldva = '+oldva)
         // console.log('newva: '+newva)
         //console.log('id 3rd: '+e.getAttribute("id"))
-        document.getElementById('answer').value = oldva;
+        document.getElementById('answer').value = oldva+' '+opera+' '+newva;
     }
 </script>
