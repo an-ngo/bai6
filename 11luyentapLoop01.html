@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyen tap vong lap</title>
+</head>
+<body>
+    <button type="button" id="but" onclick="start()">Start</button>
+    <script>
+
+        //bai8
+        function start(){
+            let cnt=3;
+            while(cnt!=0){
+                let a=parseInt(prompt('nhap vao so nho nhat'));
+                let b=parseInt(prompt('nhap vao so lon nhat'));
+                let c=parseInt(prompt('nhap vao so ban chon'));
+                let d=Math.round(Math.random*(b-a)+a);
+                alert('so ngau nhien la: '+d);
+                if(c==d) alert("ban chon dung")
+                else {
+                    cnt--;
+                    if(c<d) alert('ban chon so nho hon');
+                    else alert("ban chon so nho hon")
+                }
+        }
+
+        }
+
+        for(let i=0;i<100;i++){
+            if (i==99) alert('success')
+        }
+
+        temperature=prompt("hay nhap nhieu do");
+        if(temperature<20)  alert("hay tang nhiet do")
+        else if(temperature>100) alert("hay giam nhiet do")
+
+        let a =1;
+        let b = 1;
+        let count =0
+        let sum=0
+        for(let i=0;i<10;i++){
+            
+            sum+=a;document.write('<br>'+a);if(a%5==0&&count==0) {document.write(' chia het cho 5');count+=1; }
+            a+=b;
+            sum+=b;document.write('<br>'+b);
+            b+=a;
+        }
+        document.write('tong 20 so fibonaci dau tien la: '+sum)
+
+        function kiemtrachiahetcho7(e){
+            if (e%7==0) return true;
+            else return false;
+        }
+
+        count =0;sum=0;let number =1;
+        while(1){
+            if (count=30) break;
+            if(kiemtrachiahetcho7(number)){
+                sum+=number;
+                count++
+            }
+            number++
+        }
+
+        for(let i=1;i<=100;i++){
+            if(i%15==0)  document.write('FizzBuzz <br>');
+            else if(i%3==0) document.write('Fizz <br>');
+            else if(i%5==0) document.write('Buzz <br>');
+            else document.write(i+'<br>')
+        }
+
+    </script>
+</body>
+</html>
