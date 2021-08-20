@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hien thi cac so nguyen to</title>
+</head>
+<body>
+    <script>
+        
+        
+        function inraNsonguyento(N){
+            let count=0;
+            let number=2
+            while(count<N){
+                count =kiemtrasonguyento(number,count);
+                number++;
+
+            }
+        }
+
+        function kiemtrasonguyento(e,count){
+            let c=0
+            for(let i=2;i<e;i++){
+                if(e%i==0)  c+=1;
+            }
+            if(c==0||e<=3) {
+                document.write(e+'<br>');
+                console.log(e);
+                count+=1;
+            }
+            return count;
+
+        }
+
+        let N = parseInt(prompt("nhap so luong so can in ra"));
+
+        inraNsonguyento(N);
+    </script>
+</body>
+</html>
