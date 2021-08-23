@@ -1,0 +1,44 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính tiền điện</title>
+</head>
+<body>
+<form action=""><h1>Tính tiền điện</h1>
+    <br>
+    <label for="box1">Số cũ </label>
+    <input type="number" id = "box1">
+    <br>
+    <br>
+    <label for="box2">Số mới</label>
+    <input type="number" id="box2">
+    <br>
+    <br>
+    <button onclick="fun()">click me</button>
+
+</form>
+
+<script>
+    function fun() {
+        let oldNumber = document.getElementById('box1').value;
+        let newNumber = document.getElementById('box2').value;
+        let result = parseInt(newNumber) - parseInt(oldNumber);
+        if (result < 0) {
+            alert('giá tri nhập không hơp lệ');
+        } else if (result <= 50) {
+            alert('Bậc 1: ' + result * 1.678 + ' nghìn đồng');
+        } else if (result <= 100) {
+            alert('Bậc 2: ' + result * 1.734 + ' nghìn đồng');
+        } else if (result <= 200) {
+            alert('Bậc 3: ' + result * 2.014 + ' nghìn đồng');
+        } else if (result <= 300) {
+            alert('Bậc 4: ' + result * 2.536 + ' nghìn đồng');
+        } else if (result <= 400) {
+            alert('Bậc 5: ' + result * 2.834 + ' nghìn đồng');
+        } else alert('Bậc 6: ' + result * 2.927 + ' nghìn đồng')
+    }
+</script>
+</body>
+</html>

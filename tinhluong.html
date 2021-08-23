@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lương</title>
+</head>
+<body>
+<h1>Tính số ngày công</h1>
+<form>
+    Số ngày công: <label for="day"><input type="number" value="" id="day"></label>
+    <br>
+    <br>
+    <div>
+        <label for="select">Bậc lương:</label>
+        <select name="select" id="select">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+    </div>
+    <br>
+    <button value="a" id="submit" onclick="salary()">Click here</button>
+</form>
+<script>
+    // Tạo chương trình
+    // Cho phép người dùng nhập vào số ngày công và lựa chọn bậc lương (A, B, C, D)
+    // Tạo 1 function tính lương của nhân viên theo công thức như sau:
+    // Bậc A: 5triệu* số ngày công/22
+    // Bậc B: 6triệu* số ngày công/23
+    // Bậc B: 8triệu* số ngày công/23
+    // Bậc D: 10triệu* số ngày công/23
+    function salary(){
+        let ngayCong = document.getElementById('day').value;
+        ngayCong = parseInt(ngayCong);
+        let chonBac = document.getElementById('select').value;
+        switch (chonBac){
+            case "A":
+                alert(5 * ngayCong / 22 +" triệu");
+                break;
+            case "B":
+                alert(6 * ngayCong / 23 +" triệu");
+                break;
+            case "C":
+                alert(8 * ngayCong / 23 +" triệu");
+                break;
+            case "D":
+                alert(10 * ngayCong / 23 +" triệu");
+                break;
+        }
+    }
+</script>
+</body>
+</html>
