@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mang</title>
+</head>
+<body>
+    <script>
+        
+        //bai1
+        myColor = ["Red", "Green", "White", "Black"];
+        console.log(myColor.join())
+
+        //bai2
+        let a=prompt("nhap vao chuoi so");
+        let str = a.toString();
+        let b = [str[0]];
+        for(let i=1;i<a.length;i++){
+            if(str[i-1]%2==0 &&str[i]%2==0){
+                b.push('-',str[i]);
+            }
+            else b.push(str[i])
+        }
+        console.log(b.join(''))
+
+
+        //bai3
+        var str = 'The Quick Brown Fox';
+        var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        var result=[];
+
+        for(let i=0;i<str.length;i++){
+            //console.log(UPPER.indexOf(str[i]))
+            if(UPPER.indexOf(str[i])!==-1){
+                result.push(str[i].toLowerCase())
+            }
+            else if(LOWER.indexOf([str[i]]!==-1)){
+                result.push(str[i].toUpperCase())
+            }
+            else result.push(str[i])
+        }
+        console.log(result.join(''))
+
+    </script>
+</body>
+</html>
