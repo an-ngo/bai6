@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+<body>
+    <script>
+        word=prompt("type the word here");
+        word = word.toString();
+        console.log(word)
+        English=["fish","cat","dog","mouse"];
+        Vietnam=["ca","meo","cho","chuot"]
+        for(let i=0;i<English.length;i++){
+            if(word==English[i])
+                {alert(word+" nghia la: "+Vietnam[i])}
+        }
+    </script>
+</body>
+</html>
