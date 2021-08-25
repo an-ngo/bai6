@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake text area</title>
+</head>
+<body>
+    <h1>Type anything slowly</h1>
+    <textarea style="margin: 0px auto;" name="text" id="text" cols="30" rows="10" onkeydown="fakeTextArea()"></textarea>
+</body>
+</html>
+<script>
+    let str='toi la ke ngoc '
+    let newstr=''
+    let b=document.getElementById('text')
+    let count=0;
+    function fakeTextArea(){
+        newstr=''
+        for(let i=0;i<=count;i++){
+            newstr+=str[i]
+        }
+        count++;
+        if(count===15){
+            b.value='';
+            count=0;
+        }
+        b.value=newstr;
+        setTimeout("fakeTextarea()", 1);
+    }
+
+</script>
