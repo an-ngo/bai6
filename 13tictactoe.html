@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic tac toe</title>
+</head>
+<body>
+    <h3>Tic tac toe</h3>
+    <p id=table></p><br>
+    <input type="button" name="X" id="X" value="nguoi thu nhat" onclick="changValueX()">
+    <input type="button" name="O" id="O" value="nguoi thu hai" onclick="changValueO()">
+</body>
+</html>
+    <script>
+        let b=document.getElementById('table')
+        let board = [];
+        let data=''
+        let player1Win=false;
+        let player2Win=false;
+        // let arrayX={
+
+        // };
+        // let arrayY={
+
+        // }
+
+        for(let i=0;i<5;i++){
+            board[i]=new Array(".",".",".",".",".")
+        }
+
+        
+        function displayBoard(){
+            data=''
+            for(let i=0;i<5;i++){
+                data+='<br>';
+                for(let j=0;j<5;j++){
+                    data+=board[i][j]+"&nbsp&nbsp&nbsp"
+                    b.innerHTML=data;
+                }
+            }
+        }
+        
+        displayBoard();
+
+        function changValueX(){
+            x=prompt("nhap vao toa do ngang");
+            x=parseInt(x);
+            y=prompt("nhap vao toa do doc")
+            y=parseInt(y);
+            board[x][y]='X';
+            //arrayX={arrX=x,arrY=y}
+            displayBoard();
+            //console.log(arrayX.arrX+' '+arrayX.arrY)
+            checkWin();
+        }
+        
+        function changValueO(){
+            x=prompt("nhap vao toa do ngang");
+            x=parseInt(x);
+            y=prompt("nhap vao toa do doc")
+            y=parseInt(y);
+            board[x][y]='O';
+            displayBoard();
+            checkWin();
+        }
+
+        function checkWinSameRow(){
+            for(let i=0;i<5;i++){
+                for(let j=0;j<3;j++){
+                    if(board[i][j]===board[i][j+1]&&board[i][j]===board[i][j+2]){
+                        if(board[i][j]==='X') player1Win=true;
+                        else if(board[i][j]==='O') player2Win=true;
+                    }
+                }
+            }
+        }
+        
+        function checkWinSameColumn(){
+            for(let j=0;j<5;j++){
+                for(let i=0;i<3;i++){
+                    if(board[i][j]===board[i][j+1]&&board[i][j]===board[i][j+2]){
+                        if(board[i][j]==='X') player1Win=true;
+                        else if(board[i][j]==='O') player2Win=true;
+                    }
+                }
+            }
+        }
+
+        function checkWinCross1(){
+            for(let i=0;i<3;i++){
+                for(let j=0;j<3;j++){
+                    if(board[i][j]===board[i+1][j+1]&&board[i][j]===board[i+2][j+2]){
+                        if(board[i][j]==='X') player1Win=true;
+                        else if(board[i][j]==='O') player2Win=true;
+                    }
+                }
+            }
+        }
+
+        function checkWinCross2(){
+            for(let i=2;i<5;i++){
+                for(let j=2;j<5;j++){
+                    if(board[i][j]===board[i-1][j-1]&&board[i][j]===board[i-2][j-2]){
+                        if(board[i][j]==='X') player1Win=true;
+                        else if(board[i][j]==='O') player2Win=true;
+                    }
+                }
+            }
+        }
+        
+        function checkWin(){
+            checkWinSameColumn();
+            checkWinSameRow();
+            checkWinCross1();
+            checkWinCross2();
+            if(player1Win===true){
+                alert("player 1 Win")
+            }else if(player2Win===true){
+                alert("player 2 Win")
+            }
+        }
+
+    </script>
