@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mang 02</title>
+</head>
+<body>
+    <script>
+        //bai 1
+        let a = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+            ];
+        for(let i=0;i<a.length;i++){
+            console.log('row '+i);
+            for(let j=0;j<a[i].length;j++){
+                console.log(a[i][j])
+            }
+        }
+
+        //bai 2
+        let arr=[ 'c', 's', 'c', '2', '6', '1' ];
+        let b = arr.reverse()
+        console.log(b.join(''))
+
+        //bai 3
+        let array = []
+        let str='ai do nghi cho em 1 chuoi gom nhieu chu voi nao'
+        let number='1234567890'
+        let count=0;
+        let size = prompt("nhap vao kich thuoc cua mang");
+        size = parseInt(size)
+        for (let i=0;i<size;i++) {
+            array[i]=prompt("nhap vao mang phan tu thu "+i)
+        }
+        for (const i of array) {
+            for (const j of i) {
+                if(number.indexOf(j)!=-1){
+                    count++
+                }
+            }
+        }
+        console.log("so ky tu so trong mang la: "+count)
+
+        //bai 4
+        count=0;
+        if(str[0]=' ') 
+        for (let i = 0; i < str.length-1; i++) {
+            if(str[i]==' '&&str[i+1]!=' '){
+                count++;
+            }
+        }
+        if(str[0]==' ') count++
+        console.log('so tu trong chuoi la: '+count);
+        
+        //bai 5
+        let check=true
+        let str1=prompt("nhap vao chuoi thu nhat")
+        let str2=prompt("nhap vao chuoi thu 2");
+        if(str1.length===str2.length){
+            for(let i=0;i<str1.length;i++){
+                if(str1[i]!==str2[i]) check=false;
+            }
+        }else check=false
+        if(check) alert("2 chuoi giong nhau")
+        else alert("2 chuoi khac nhau")
+
+        //bai 6
+        let arr2=[];
+        let count=0;
+        console.log(count)
+        do{
+            arr2[count]=prompt('hay nhap vao ky tu thu '+(count+1));
+            if(arr2[count]==='-') arr2[count]='_'
+            count++;
+        }
+        while(arr2[count-1]!='')
+        console.log(arr2)
+
+    </script>
+</body>
+</html>
