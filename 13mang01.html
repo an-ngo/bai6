@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mang 01</title>
+</head>
+<body>
+    <p id="id"></p>
+    <script>
+        //bai 1
+        let sum=0;count=0
+        var arr = [1,-2,3,4,10,10,10,10,11,14,13,12]
+        // for (const iterator of arr) {
+        //     sum +=iterator;
+        //     if(iterator>=10) count++
+        // }
+        // console.log(sum+' '+count)
+
+        //bai 2
+        let max=arr[0];count=0
+        for (let i=0;i<arr.length;i++) {
+            if(max<arr[i]) {max=arr[i];count=i;}
+        }
+        console.log('max ='+max+' count= '+count)
+        
+        //bai 3
+        sum=0;
+        for (const i of arr) {
+            sum+=i;
+        }
+        sum=parseFloat(sum/arr.length)
+        console.log('trung binh= '+count)
+
+        //bai 4
+        console.log('dao nguoc = '+arr.reverse())
+
+        //bai 5
+        count=0;
+        for (const i of arr) {
+            if (i<0) count++
+        }
+        console.log("so nguyen am = "+count)
+
+        //bai 6
+        let array=[];
+        for (let index = 0; index < 10; index++) {
+            let a=prompt("nhap so thu "+index)
+            array[index]=parseInt(a)
+            console.log('array[index] = '+array[index])
+        }
+        let a=prompt("nhap vao so V can tim");
+        let check=false
+        for (const i of array) {
+            if(a==i) check=true;
+        }
+        if(check) console.log(a+' is in the array')
+        else console.log(a+' is not in array')
+
+        //bai 7
+        for(let i=0;i<array.length;i++){
+            if(array[i]==a){
+                array.splice(i,1)
+            }
+        }
+
+        //bai 8
+        for(let i=0;i<array.length;i++){
+            for(let j=i+1;j<array.length;j++){
+                if(array[i]>array[j]){
+                    let a=array[i];
+                    array[i]=array[j];
+                    array[j]=a;
+                }
+            }
+        }
+        console.log(array)
+
+        //bai 9
+        let array2=[]
+        for(let i=0;i<10;i++){
+            let a=prompt("nhap vao cac phan tu cua mang thu 2");
+            array2[i]=parseInt(a)
+        }
+        let array3=array.concat(array2);
+        console.log(array3)
+
+    </script>
+</body>
+</html>
