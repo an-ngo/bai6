@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Temperature</title>
+</head>
+<body>
+    <input type="number" name="1" id="1" value='' oninput="tempConvert(this.value)" onchange="tempConvert(this.value)"><br>
+    <p id="output"></p>
+</body>
+</html>
+<script>
+    function tempConvert(e){
+        let bar=(parseFloat(e)-32)/1.8
+        document.getElementById('output').innerHTML=bar;
+    }
+</script>
