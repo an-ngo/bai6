@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ham 01</title>
+</head>
+<body>
+    <script>
+        alertMessage();
+        let a=prompt("nhap vao 1 so")
+        a=parseFloat(a)
+        alert(increase1(a))
+        str=prompt("nhap vao ten ngoi sao");
+        alert("chom sao cua ngoi sao do la: "+find(str))
+    </script>
+</body>
+</html>
+<script>
+    function alertMessage(){
+        alert("hello")
+    }
+    function increase1(e){
+        return e+1;
+    }
+    function function2(){
+        let a = prompt("nhap vao so thu 1")
+        let b = prompt("nhap vao so thu 2")
+        a=parseFloat(a)
+        b=parseFloat(b);
+        if (a<=b) return a+b;
+    }
+    function addNumbers() {
+    firstNum = 4;
+    secondNum = 8;
+    result = firstNum + secondNum;
+    return result;
+    }
+    result = 0;
+    alert(result);
+    result = addNumbers();
+    alert(result)
+
+    let arr1=['Polaris','Aldebaran','Deneb','Altair','Dubhe','Regulus'];
+    let arr2=['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    function find(str){
+        for (let i=0;i<arr1.length;i++) {
+            if(arr1[i]===str){
+                return arr2[i]
+            }
+        }
+    }
+
+</script>
