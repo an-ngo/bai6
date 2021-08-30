@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quan ly ung dung su dung ham</title>
+
+    <style>
+        button{
+            background-color: rgb(109, 236, 109);
+            border: none;
+            color: white;
+            font-size: 15px;
+            display: inline-block;
+            border-radius: 16px;
+            margin: 2px;
+        }
+        table{
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        tr,td{
+            text-align: center;
+            border: 1px solid white;
+            margin: auto;
+            border-collapse: collapse;
+
+        }
+        body{
+            background-image: url(https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Add New Product</h1>
+    <form action="">
+        <input type="text" name="inputProduct" id="inputProduct" placeholder="New product">
+        <button type="button" onclick="addProduct()">Add</button>
+    </form>
+    <h1>Display All Product</h1>
+    <h2>Product Name</h2>
+    <div>
+
+            
+            <div id=displayProduct></div>
+
+    </div>
+
+    
+    <script>
+        let list =['apple','orange','watermelon'];
+        //let b=document.getElementById('displayProduct')
+        let data=''
+        
+        function displayBoard(){
+            data="<table><colgroup><col width='150px' span='1'><col width='150px' span='1'><col width= '80px' span='1'></colgroup>";
+            for (let i=0;i<list.length;i++) {
+                data+="<tr id='product"+i+"'>"
+                data+="<td >"+list[i]+"</td>";
+                data+="<td><button onclick='changeProduct("+i+")'>Edit</button></td>"
+                data+="<td><button onclick='deleteProduct("+i+")'>Delete</button></td>"
+                data+="</tr>"
+                
+            }
+            data+="</table>"
+            document.getElementById('displayProduct').innerHTML+=data;
+        }
+
+        displayBoard();
+
+        function addProduct(){
+            let a=document.getElementById('inputProduct').value
+            list.push(a);
+            alert("ban da them vao "+a);
+            displayBoard();
+            document.getElementById("inputProduct").value=''
+        }
+
+        function changeProduct(index){
+            let newProduct=prompt("hay nhap vao gia tri moi");
+            // for(let i=list.length;i>index;i--){
+            //     list[i]=list[i-1];
+            // }
+            list[index]=newProduct;
+            displayBoard();
+        }
+        function deleteProduct(index){
+            
+            for(let i = index;i<list.length-1;i++){
+                list[i]=list[i+1];
+            }
+            list.pop();
+            displayBoard();
+        }
+    </script>
+</body>
+</html>
