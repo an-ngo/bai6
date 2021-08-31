@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinh tron</title>
+</head>
+<body>
+    <script>
+        let Circle =function(radius,color){
+            this.radius=radius;
+            this.color=color;
+            let Circle=function(){}
+            this.getRadius=function(){
+                return radius
+            }
+            this.getArea=function(){
+                return radius*radius*Math.PI;
+            }
+        }
+
+        let circle=new Circle(2,'red');
+        function alertBack(circle){
+            alert("radius: "+circle.getRadius()+"; area: "+circle.getArea())
+            
+        }
+        alertBack(circle)
+    </script>
+</body>
+</html>
