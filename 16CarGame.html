@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Driver</title>
+    <style>
+        #carPicture{
+            width: 80px;
+            top: 100px;
+            position: relative;
+            
+        }
+        #apple1{
+            width: 50px;
+            height: 50px;
+            top: 200px;
+            left: 200px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src='/html/bai6/img/carPicture1.jpg' alt="carHere" id="carPicture" >
+        <img src="/img/images.jfif" alt="appleHere" id="apple1">
+
+    </div>
+    <script>
+        
+        class Car{
+            constructor(img){
+                this.speed=5;
+                this.x=0;
+                this.y=0;
+                this.img=img
+                this.direction='right'
+            }
+        }
+
+        class Apple{
+            constructor(){
+                this.x=200;
+                this.y=200;
+            }
+        }
+
+        function checkKey(e){
+            e=e||window.event;
+            if(event.ctrlKey){
+                car.speed=20
+            } else car.speed=5
+            if(e.keyCode=='38'){
+                // up arrow
+                car.direction='up'
+                car.y-=car.speed
+                displayCar.style.top=car.y+'px'
+            }
+            else if(e.keyCode=='40'){
+                //down arrow   
+                car.direction='down'
+                car.y+=car.speed
+                displayCar.style.top=car.y+'px'
+            }
+            else if(e.keyCode=='37'){
+                //left arrow
+                car.direction='left'
+                car.x-=car.speed
+                displayCar.style.left=car.x+'px'
+            }
+            else if(e.keyCode=='39'){
+                //right arrow
+                car.direction='right'
+                car.x+=car.speed
+                displayCar.style.left=car.x+'px'
+            }
+        
+        }
+        function checkRotation(){
+            switch(car.direction){
+                case 'right':
+                    displayCar.style.transform='rotate(90deg)'
+                    break;
+                case 'left':
+                    displayCar.style.transform='rotate(-90deg)'
+                    break;
+                case 'up':
+                    displayCar.style.transform='rotate(0deg)'
+                    break;
+                case 'down':
+                    displayCar.style.transform='rotate(180deg)';
+                    break;
+            }
+
+        }
+        
+        function randomApple(){
+            apple.x=Math.floor(Math.random()*window.innerWidth)
+            apple.y=Math.floor(Math.random()*700)
+
+            displayApple.style.top=apple.x+'px';
+            displayApple.style.left=apple.y+'px';
+        }
+
+        function checkEatApple(){
+            if((apple.x+25)>(car.x+30)&&(car.x-30)>(apple.x-25)&&(apple.y+25)>car.y&&car.y>(apple.y-25)){
+                randomApple();
+            }
+        }
+        
+        
+        function playGame(){
+            checkKey();
+            checkRotation();
+            checkEatApple();
+        }
+        
+        let displayCar = document.getElementById('carPicture')
+        let displayApple = document.getElementById('apple1')
+
+        let car=new Car;
+        let apple=new Apple;
+        
+        document.onkeydown=playGame;
+
+        //setInterval(randomApple,1000);
+
+        displayCar.style.transform='rotate(90deg)'
+
+    </script>
+</body>
+</html>
