@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Mobile{
+        constructor(){
+            this.pin=Math.floor(Math.random*255);
+            this.typingArea=[];
+            this.receiveArea=[];
+            this.sentArea=[];
+            this.battery=100;
+            this.status=false;
+        }
+        checkStatus(){
+            if(!status)
+            return status;
+            this.battery--;
+        }
+        changeStatus(){
+            status=!status;
+            this.battery--;
+        }
+        changingPhone(){
+            setInterval(function(){battery++},1000)
+
+        }
+        typeMessage(input){
+            if(!status)
+            this.typingArea+=input;
+            this.battery--;
+        }
+        receiveMessage(input){
+            if(!status)
+            this.receiveArea+=input;
+            this.battery--;
+        }
+        sentMessage(input){
+            if(!status)
+            this.sentArea+=input;
+            this.battery--;
+        }
+        viewSentMessage(){
+            if(!status)
+            return this.sentArea;
+            this.battery--;
+        }
+        viewReceiveMessage(){
+            if(!status)
+            return this.receiveArea;
+            this.battery--;
+        }
+
+    }
+
+    let nokia = new Mobile;
+    let iphone = new Mobile;
+</script>
